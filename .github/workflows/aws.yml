@@ -21,8 +21,8 @@ jobs:
       - name: Deploy code to EC2
         run: |
           ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.EC2_HOST }} << 'EOF'
-            cd /home/ubuntu/your-app-folder
+            cd /home/ubuntu/AWS
             git pull origin main
             npm install
-            pm2 restart app || pm2 start app.js --name "app"
+            node index.js
           EOF
