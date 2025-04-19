@@ -16,11 +16,11 @@ jobs:
       - name: Setup SSH key
         uses: webfactory/ssh-agent@v0.5.4
         with:
-          ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
+          ssh-private-key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDWhwvrFS3zKE4dKDYvrDziYcrBIlWS3XmC+jFeNDXPg
 
       - name: Deploy code to EC2
         run: |
-          ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.EC2_HOST }} << 'EOF'
+          ssh -o StrictHostKeyChecking=no ubuntu@http://13.235.68.78/ << 'EOF'
             cd /home/ubuntu/AWS
             git pull origin main
             npm install
