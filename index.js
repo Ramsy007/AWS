@@ -1,10 +1,10 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 4000;
 
 // Hello World Route
 app.get('/', (req, res) => {
-  res.send('Hello World from Node.js! -------- LWDE KA API------');
+  res.send('Hello World from Node.js! ------- LWDE KA API------');
 });
 
 // Start server
